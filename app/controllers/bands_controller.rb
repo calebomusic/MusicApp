@@ -1,4 +1,6 @@
 class BandsController < ApplicationController
+  before_filter :authenticate
+
   def edit
     @band = Band.find_by(id: params[:id])
     render :edit
@@ -19,7 +21,7 @@ class BandsController < ApplicationController
   def destroy
     band = Band.find_by(id: params[:id])
     band.destroy
-    
+
     @bands = Band.all
     render :index
   end

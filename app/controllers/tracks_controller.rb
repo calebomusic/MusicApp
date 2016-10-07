@@ -1,4 +1,6 @@
 class TracksController < ApplicationController
+  before_filter :authenticate
+
   def edit
     @orig_track = Track.find_by(id: params[:id])
     @albums = Album.all

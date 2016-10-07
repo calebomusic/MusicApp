@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+  before_filter :authenticate
+
   def edit
     @album = Album.find_by(id: params[:id])
     @bands = Band.all
