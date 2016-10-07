@@ -1,0 +1,14 @@
+<h1> <%= @track.name %></h1>
+<p>
+  Track Attributes:
+</p>
+<ul>
+  <% album = Album.find_by_id(@track.album_id.to_i) %>
+  <% band = Band.find_by_id(album.band_id) %>
+  <li>Album: <%= album.name %></li>
+  <li>Band: <%= band.name %></li>
+  <li>Kind: <%= @track.kind %></li>
+  <li>Lyrics: <%= @track.lyrics %></li>
+</ul>
+
+<%= link_to "#{album.name}", "/albums/#{album.id}" %>

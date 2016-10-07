@@ -1,0 +1,12 @@
+<% action_url = action == :edit ? "/bands/#{band.id}" : "/bands" %>
+
+<form class="" action='<%= action_url %>' method="post">
+  <%= auth_token %>
+  <% if action == :edit %>
+  <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <label for="band[name]">Band name:</label>
+  <input type="text" name="band[name]" placeholder="here">
+  <input type="submit" value="record">
+</form>

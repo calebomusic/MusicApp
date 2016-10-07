@@ -1,0 +1,12 @@
+<!-- Currently there is no index route or action for albums -->
+<h1>Albums#index</h1>
+<p>Find me in app/views/albums/index.html.erb</p>
+
+<h1>All Albums</h1>
+<ul>
+<% @albums.each do |album| %>
+  <li>
+    <%= link_to "#{album.name}", album_url(album) %>
+  </li>
+<% end %>
+</ul>

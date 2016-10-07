@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resources :tracks, only: [:new]
   end
 
-  resources :tracks, only: [:create, :destroy, :update, :show, :edit] 
+  resources :tracks, only: [:create, :destroy, :update, :show, :edit]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

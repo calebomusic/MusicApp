@@ -11,6 +11,7 @@
 
 class Track < ApplicationRecord
   validates :album_id, :name, presence: true
+  validates :kind, inclusion: { in: ["REGULAR", "BONUS"]}
 
   belongs_to :album
   has_one :band,
